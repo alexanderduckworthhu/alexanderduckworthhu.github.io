@@ -54,6 +54,17 @@ body {
 }
 .nav-cta:hover { background: var(--accent-dim); }
 
+.lang-select {
+  font-family: var(--mono); font-size: 0.82rem; font-weight: 500;
+  color: var(--text); background: var(--card);
+  border: 1px solid var(--card-border); border-radius: 8px;
+  padding: 6px 10px; cursor: pointer; appearance: none;
+  transition: border-color 0.15s;
+}
+.lang-select:hover { border-color: var(--accent); }
+.lang-select:focus { outline: none; border-color: var(--accent); }
+.lang-select option { background: var(--bg); color: var(--text); }
+
 /* ── Hero ────────────────────────────── */
 .hero { padding: 110px 0 90px; }
 .hero-kicker {
