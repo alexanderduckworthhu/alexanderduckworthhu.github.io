@@ -20,32 +20,42 @@
   <div class="nav-inner">
     <a href="#top" class="nav-logo">AD<span class="accent">.</span></a>
     <div class="nav-links">
-      <a href="#projects">Case studies</a>
-      <a href="#research">Research</a>
-      <a href="#more-projects">More projects</a>
-      <a href="#about">About</a>
+      <a href="#projects" data-i18n="nav_case">Case studies</a>
+      <a href="#research" data-i18n="nav_research">Research</a>
+      <a href="#more-projects" data-i18n="nav_more">More projects</a>
+      <a href="#about" data-i18n="nav_about">About</a>
       <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
+      <select id="lang-select" class="lang-select" aria-label="Change language">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="it">IT</option>
+        <option value="pt">PT</option>
+        <option value="es">ES</option>
+        <option value="zh">中文</option>
+        <option value="ru">RU</option>
+      </select>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="container">
-    <p class="hero-kicker">Alexander Duckworth · Data Science &amp; ML</p>
-    <h1>I build decision-support tools<br />that people can <span class="accent">interrogate</span>,<br />not just look at.</h1>
-    <p class="hero-sub">
+    <p class="hero-kicker" data-i18n="hero_kicker">Alexander Duckworth · Data Science &amp; ML</p>
+    <h1 data-i18n="hero_title">I build decision-support tools<br />that people can <span class="accent">interrogate</span>,<br />not just look at.</h1>
+    <p class="hero-sub" data-i18n="hero_sub">
       Humanitarian analytics, sustainable finance, clinical ML, and industrial monitoring —
       every project ships with explicit trade-offs, reproducible pipelines, and honest metrics.
       I work across English, French, German, and Mandarin Chinese.
     </p>
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View case studies</a>
-      <a href="mailto:alexanderduckworthhu@gmail.com" class="btn btn-ghost">Get in touch</a>
+      <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_primary">View case studies</a>
+      <a href="mailto:alexanderduckworthhu@gmail.com" class="btn btn-ghost" data-i18n="hero_btn_ghost">Get in touch</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label">featured projects</span></div>
-      <div class="stat"><span class="stat-num">1</span><span class="stat-label">peer-style research paper</span></div>
-      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">reproducible from clone</span></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label" data-i18n="stat_projects">featured projects</span></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-i18n="stat_paper">peer-style research paper</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label" data-i18n="stat_repro">reproducible from clone</span></div>
     </div>
   </div>
 </header>
@@ -53,34 +63,34 @@
 <main>
   <section class="section" id="projects">
     <div class="container">
-      <h2 class="section-title">Case studies</h2>
-      <p class="section-sub">Each project answers one narrow question well — with the reasoning behind every stack choice and the numbers to back it up.</p>
+      <h2 class="section-title" data-i18n="sec_case_title">Case studies</h2>
+      <p class="section-sub" data-i18n="sec_case_sub">Each project answers one narrow question well — with the reasoning behind every stack choice and the numbers to back it up.</p>
 
       <!-- 1. Where Needs Overlap -->
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">Humanitarian data · Geospatial analytics</p>
+            <p class="case-domain" data-i18n="c1_domain">Humanitarian data · Geospatial analytics</p>
             <h3>Where Needs Overlap</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/where-needs-overlap" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/where-needs-overlap" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">A country-level dashboard showing where acute food insecurity, hosted displacement, and under-5 mortality <em>coincide</em> — built for IM and programme analysts working with UNICEF, UNHCR, and OCHA counterparts.</p>
+        <p class="case-hook" data-i18n="c1_hook">A country-level dashboard showing where acute food insecurity, hosted displacement, and under-5 mortality <em>coincide</em> — built for IM and programme analysts working with UNICEF, UNHCR, and OCHA counterparts.</p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Joined three live public APIs (HDX/IPC, UNHCR, WHO GHO) on ISO3 with documented definitions — origin vs asylum counts answer different questions, so country-of-asylum was locked in.</li>
-              <li>Deliberately <strong>no ML forecasting</strong>: unverifiable crisis prediction would undermine trust; the tool frames one decision question instead.</li>
+              <li data-i18n="c1_ch1">Joined three live public APIs (HDX/IPC, UNHCR, WHO GHO) on ISO3 with documented definitions — origin vs asylum counts answer different questions, so country-of-asylum was locked in.</li>
+              <li data-i18n="c1_ch2">Deliberately <strong>no ML forecasting</strong>: unverifiable crisis prediction would undermine trust; the tool frames one decision question instead.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li>Surfaced <strong>3 dual-pressure countries</strong> (Sudan, Ethiopia, Chad) above both focus-set medians across ~48.6M people in IPC Phase 3+.</li>
-              <li>Coverage gaps flagged explicitly rather than silently imputed.</li>
+              <li data-i18n="c1_im1">Surfaced <strong>3 dual-pressure countries</strong> (Sudan, Ethiopia, Chad) above both focus-set medians across ~48.6M people in IPC Phase 3+.</li>
+              <li data-i18n="c1_im2">Coverage gaps flagged explicitly rather than silently imputed.</li>
             </ul>
           </div>
         </div>
@@ -93,27 +103,27 @@
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">NLP · Retrieval-augmented generation</p>
+            <p class="case-domain" data-i18n="c2_domain">NLP · Retrieval-augmented generation</p>
             <h3>WHO Guidance QA — Multilingual RAG</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/multilingual-rag-assistant" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/multilingual-rag-assistant" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">A document QA assistant over WHO topic guidance that indexes English and French in one vector space, answers with passage-level citations, and <em>refuses</em> when retrieval is weak.</p>
+        <p class="case-hook" data-i18n="c2_hook">A document QA assistant over WHO topic guidance that indexes English and French in one vector space, answers with passage-level citations, and <em>refuses</em> when retrieval is weak.</p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Chose <code>multilingual-e5-small</code> over OpenAI embeddings for a shared EN/FR space and fully offline demos; Chroma over Pinecone for zero cloud cost and inspectable indexes.</li>
-              <li>Trust stack: distance gate → closed-context prompt → chunk-ID citations → verifiable source passages in the UI. No "zero hallucination" claims — retrieval quality is the measured engineering claim.</li>
+              <li data-i18n="c2_ch1">Chose <code>multilingual-e5-small</code> over OpenAI embeddings for a shared EN/FR space and fully offline demos; Chroma over Pinecone for zero cloud cost and inspectable indexes.</li>
+              <li data-i18n="c2_ch2">Trust stack: distance gate → closed-context prompt → chunk-ID citations → verifiable source passages in the UI. No "zero hallucination" claims — retrieval quality is the measured engineering claim.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li><strong>Precision@5 = 0.65 · MRR = 0.938</strong> on a golden-query eval set, reproducible with one command.</li>
-              <li>Works without any API key via an extractive fallback path.</li>
+              <li data-i18n="c2_im1"><strong>Precision@5 = 0.65 · MRR = 0.938</strong> on a golden-query eval set, reproducible with one command.</li>
+              <li data-i18n="c2_im2">Works without any API key via an extractive fallback path.</li>
             </ul>
           </div>
         </div>
@@ -126,27 +136,27 @@
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">Clinical ML · Explainability</p>
+            <p class="case-domain" data-i18n="c3_domain">Clinical ML · Explainability</p>
             <h3>ICU 48-hour Mortality Risk with SHAP Attribution</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/icu-mortality-vital-shap" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/icu-mortality-vital-shap" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">Calibrated short-horizon mortality risk from vital-sign time series — plus a SHAP heatmap showing <em>which vital × lookback window</em> pushed each score, so clinicians can agree, challenge, or investigate.</p>
+        <p class="case-hook" data-i18n="c3_hook">Calibrated short-horizon mortality risk from vital-sign time series — plus a SHAP heatmap showing <em>which vital × lookback window</em> pushed each score, so clinicians can agree, challenge, or investigate.</p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Isotonic-calibrated logistic regression before any deep model: most MIMIC tutorials stop at AUROC and skip calibration, missingness honesty, and how the number should be spoken aloud.</li>
-              <li>Transparent preprocessing (plausibility gates, missingness flags, bounded forward-fill) chosen over MICE because opaque imputation is harder to defend in clinical review.</li>
+              <li data-i18n="c3_ch1">Isotonic-calibrated logistic regression before any deep model: most MIMIC tutorials stop at AUROC and skip calibration, missingness honesty, and how the number should be spoken aloud.</li>
+              <li data-i18n="c3_ch2">Transparent preprocessing (plausibility gates, missingness flags, bounded forward-fill) chosen over MICE because opaque imputation is harder to defend in clinical review.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li>Full pipeline from raw vitals to calibrated probability + attribution, reproducible in three commands; MIMIC-III integration path documented under PhysioNet DUA.</li>
-              <li>Dedicated ethics &amp; uncertainty guidance shipped alongside the model.</li>
+              <li data-i18n="c3_im1">Full pipeline from raw vitals to calibrated probability + attribution, reproducible in three commands; MIMIC-III integration path documented under PhysioNet DUA.</li>
+              <li data-i18n="c3_im2">Dedicated ethics &amp; uncertainty guidance shipped alongside the model.</li>
             </ul>
           </div>
         </div>
@@ -159,27 +169,27 @@
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">Composite indices · Climate risk</p>
+            <p class="case-domain" data-i18n="c4_domain">Composite indices · Climate risk</p>
             <h3>Climate Migration Risk Index</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/climate-migration-risk-index" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/climate-migration-risk-index" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">A weight-defendable, scenario-stressable country index of climate-linked mobility pressure — combining climate, socioeconomic, conflict, and food fragility pillars on an interactive choropleth.</p>
+        <p class="case-hook" data-i18n="c4_hook">A weight-defendable, scenario-stressable country index of climate-linked mobility pressure — combining climate, socioeconomic, conflict, and food fragility pillars on an interactive choropleth.</p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Transparent fixed pillar weights over PCA/AHP so an analyst can challenge every prior; a sensitivity tab compares equal-weight rankings.</li>
-              <li>1.5&nbsp;°C / 2&nbsp;°C scenarios scale the climate pillar only — communicating scenario thinking honestly without claiming a full climate model.</li>
+              <li data-i18n="c4_ch1">Transparent fixed pillar weights over PCA/AHP so an analyst can challenge every prior; a sensitivity tab compares equal-weight rankings.</li>
+              <li data-i18n="c4_ch2">1.5&nbsp;°C / 2&nbsp;°C scenarios scale the climate pillar only — communicating scenario thinking honestly without claiming a full climate model.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li><strong>42 countries scored</strong>; rank validation against ND-GAIN-like (ρ = 0.86) and INFORM-like (ρ = 0.90) references.</li>
-              <li>Every build writes provenance metadata; weights are versioned in config.</li>
+              <li data-i18n="c4_im1"><strong>42 countries scored</strong>; rank validation against ND-GAIN-like (ρ = 0.86) and INFORM-like (ρ = 0.90) references.</li>
+              <li data-i18n="c4_im2">Every build writes provenance metadata; weights are versioned in config.</li>
             </ul>
           </div>
         </div>
@@ -192,27 +202,27 @@
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">Sustainable finance · NLP</p>
+            <p class="case-domain" data-i18n="c5_domain">Sustainable finance · NLP</p>
             <h3>ESG Composite Scoring</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/esg-composite-scoring" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/esg-composite-scoring" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">An auditable E/S/G composite for 25 public issuers that answers the client question vendor letter-grades can't: <em>"why does this name look strong or soft?"</em></p>
+        <p class="case-hook" data-i18n="c5_hook">An auditable E/S/G composite for 25 public issuers that answers the client question vendor letter-grades can't: <em>"why does this name look strong or soft?"</em></p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Equal pillar weights as a transparent, decomposable prior — with leave-one-out sensitivity — instead of a vendor-style proprietary blend.</li>
-              <li>FinBERT for finance-domain headline tone, with a lexicon fallback that keeps the demo fully offline.</li>
+              <li data-i18n="c5_ch1">Equal pillar weights as a transparent, decomposable prior — with leave-one-out sensitivity — instead of a vendor-style proprietary blend.</li>
+              <li data-i18n="c5_ch2">FinBERT for finance-domain headline tone, with a lexicon fallback that keeps the demo fully offline.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li>Directional validation vs public letter grades: <strong>Spearman ρ = 0.49 (p ≈ 0.012), 68% agreement within ±1 notch</strong> — framed honestly as a sanity check, not vendor parity.</li>
-              <li>Full drill-down UI: ranking → issuer profile → sense-check.</li>
+              <li data-i18n="c5_im1">Directional validation vs public letter grades: <strong>Spearman ρ = 0.49 (p ≈ 0.012), 68% agreement within ±1 notch</strong> — framed honestly as a sanity check, not vendor parity.</li>
+              <li data-i18n="c5_im2">Full drill-down UI: ranking → issuer profile → sense-check.</li>
             </ul>
           </div>
         </div>
@@ -225,27 +235,27 @@
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">Predictive maintenance · IoT / OT</p>
+            <p class="case-domain" data-i18n="c6_domain">Predictive maintenance · IoT / OT</p>
             <h3>CNC Spindle Health Monitor</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/cnc-machine-health" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/cnc-machine-health" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">A Plotly Dash floor board that turns multivariate sensor streams into per-cell health scores, time-to-failure estimates, and maintenance notes — designed for precision-manufacturing environments where failure labels don't exist on day one.</p>
+        <p class="case-hook" data-i18n="c6_hook">A Plotly Dash floor board that turns multivariate sensor streams into per-cell health scores, time-to-failure estimates, and maintenance notes — designed for precision-manufacturing environments where failure labels don't exist on day one.</p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Unsupervised Isolation Forest on windowed statistics instead of an LSTM autoencoder — works without labeled failures and stays explainable to plant engineers.</li>
-              <li>Mock OPC-UA tag layer (<code>ns=2;s=CNC-01.Spindle…</code>) demonstrates real IT/OT architecture without pretending plant access; NASA CMAPSS degradation structure remapped to CNC vocabulary with the mapping documented.</li>
+              <li data-i18n="c6_ch1">Unsupervised Isolation Forest on windowed statistics instead of an LSTM autoencoder — works without labeled failures and stays explainable to plant engineers.</li>
+              <li data-i18n="c6_ch2">Mock OPC-UA tag layer (<code>ns=2;s=CNC-01.Spindle…</code>) demonstrates real IT/OT architecture without pretending plant access; NASA CMAPSS degradation structure remapped to CNC vocabulary with the mapping documented.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li><strong>182 scored windows across a 4-machine fleet</strong> with traffic-light thresholds matching shop-floor language (green ≥ 75 / amber ≥ 50 / red).</li>
-              <li>One click on a cell card refreshes sensor traces and maintenance notes; 8-language UI.</li>
+              <li data-i18n="c6_im1"><strong>182 scored windows across a 4-machine fleet</strong> with traffic-light thresholds matching shop-floor language (green ≥ 75 / amber ≥ 50 / red).</li>
+              <li data-i18n="c6_im2">One click on a cell card refreshes sensor traces and maintenance notes; 8-language UI.</li>
             </ul>
           </div>
         </div>
@@ -258,27 +268,27 @@
       <article class="case">
         <div class="case-head">
           <div>
-            <p class="case-domain">Mobile · Offline-first</p>
+            <p class="case-domain" data-i18n="c7_domain">Mobile · Offline-first</p>
             <h3>Wild Log</h3>
           </div>
           <div class="case-links">
-            <a href="https://github.com/alexanderduckworthhu/wild_log" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/wild_log" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook">An offline personal expedition log for outdoor athletes — session history, map memory, and honest consistency metrics across 7 activity types, with no account, no cloud, and no social feed.</p>
+        <p class="case-hook" data-i18n="c7_hook">An offline personal expedition log for outdoor athletes — session history, map memory, and honest consistency metrics across 7 activity types, with no account, no cloud, and no social feed.</p>
         <div class="case-grid">
           <div class="case-block">
-            <h4>Challenge &amp; trade-offs</h4>
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li>Drift (SQLite) over Hive because streaks, type counts, and elevation aggregates need relational queries — not key-value storage.</li>
-              <li>Shared columns + per-activity <code>detailsJson</code> keep distance/elevation queryable while snow conditions and route grades stay type-native, avoiding a nullable-column explosion.</li>
+              <li data-i18n="c7_ch1">Drift (SQLite) over Hive because streaks, type counts, and elevation aggregates need relational queries — not key-value storage.</li>
+              <li data-i18n="c7_ch2">Shared columns + per-activity <code>detailsJson</code> keep distance/elevation queryable while snow conditions and route grades stay type-native, avoiding a nullable-column explosion.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Impact</h4>
+            <h4 data-i18n="h_impact">Impact</h4>
             <ul>
-              <li><strong>1-tap quick-log</strong> from the dashboard with activity preselected; fully usable offline (OSM tiles only when viewing the map).</li>
-              <li>All PII stays on device; streak/records logic covered by unit tests, analyzer-clean codebase.</li>
+              <li data-i18n="c7_im1"><strong>1-tap quick-log</strong> from the dashboard with activity preselected; fully usable offline (OSM tiles only when viewing the map).</li>
+              <li data-i18n="c7_im2">All PII stays on device; streak/records logic covered by unit tests, analyzer-clean codebase.</li>
             </ul>
           </div>
         </div>
@@ -292,53 +302,53 @@
 
   <section class="section section-alt" id="research">
     <div class="container">
-      <h2 class="section-title">Research paper</h2>
-      <p class="section-sub">First-author work on applying self-supervised learning to conservation-scale imagery.</p>
+      <h2 class="section-title" data-i18n="sec_research_title">Research paper</h2>
+      <p class="section-sub" data-i18n="sec_research_sub">First-author work on applying self-supervised learning to conservation-scale imagery.</p>
 
       <article class="case paper">
         <div class="case-head">
           <div>
-            <p class="case-domain">Computer vision · Self-supervised learning · Edge AI</p>
+            <p class="case-domain" data-i18n="r_domain">Computer vision · Self-supervised learning · Edge AI</p>
             <h3>Self-Supervised Anomaly Detection for Wildlife Conservation and Biodiversity Monitoring</h3>
           </div>
           <div class="case-links">
-            <a href="self-supervised-wildlife-anomaly-detection.pdf" target="_blank" rel="noopener" class="btn btn-small">Read PDF ↗</a>
-            <a href="https://github.com/alexanderduckworthhu/Self_Supervised_Anomaly_Detection_for_Wildlife_Conservation_and_Biodiversity_Monitoring" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+            <a href="self-supervised-wildlife-anomaly-detection.pdf" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_pdf">Read PDF ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/Self_Supervised_Anomaly_Detection_for_Wildlife_Conservation_and_Biodiversity_Monitoring" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="paper-authors">Alexander Duckworth-Hu &amp; Parkpoom Chaisiriprasert · Department of Digital Innovation Technologies, Rangsit University (2026)</p>
-        <p class="case-hook">
+        <p class="paper-authors">Alexander Duckworth-Hu &amp; Parkpoom Chaisiriprasert · <span data-i18n="r_affil">Department of Digital Innovation Technologies, Rangsit University (2026)</span></p>
+        <p class="case-hook" data-i18n="r_hook">
           A system-design proposal for detecting conservation-critical events — poaching, injured animals, invasive species — by learning what "normal" looks like from unlabeled camera-trap imagery, so the model flags anything statistically novel <em>without a single manual label</em>.
         </p>
 
         <div class="case-grid">
           <div class="case-block">
-            <h4>The problem &amp; the shift</h4>
+            <h4 data-i18n="r_h_problem">The problem &amp; the shift</h4>
             <ul>
-              <li>Camera traps, drones, and satellites generate petabytes of imagery; the rarest, most safety-critical events (a poacher, a new invasive species) are exactly the ones supervised classifiers never saw in training and silently misclassify.</li>
-              <li>Reframes the question from <em>"which known class is this?"</em> to <em>"does this deviate from the learned normal distribution?"</em> — an open-set framing far better matched to conservation's open-ended threats.</li>
+              <li data-i18n="r_p1">Camera traps, drones, and satellites generate petabytes of imagery; the rarest, most safety-critical events (a poacher, a new invasive species) are exactly the ones supervised classifiers never saw in training and silently misclassify.</li>
+              <li data-i18n="r_p2">Reframes the question from <em>"which known class is this?"</em> to <em>"does this deviate from the learned normal distribution?"</em> — an open-set framing far better matched to conservation's open-ended threats.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Approach</h4>
+            <h4 data-i18n="r_h_approach">Approach</h4>
             <ul>
-              <li>SimCLR contrastive learning + Masked Autoencoding on a Vision Transformer, with temporal pretext tasks over camera-trap bursts; per-pixel reconstruction error becomes the anomaly score.</li>
-              <li>Multi-modal fusion of camera-trap RGB, drone thermal, and satellite multispectral streams, optimized for edge inference on NVIDIA Jetson with TensorRT FP16.</li>
+              <li data-i18n="r_a1">SimCLR contrastive learning + Masked Autoencoding on a Vision Transformer, with temporal pretext tasks over camera-trap bursts; per-pixel reconstruction error becomes the anomaly score.</li>
+              <li data-i18n="r_a2">Multi-modal fusion of camera-trap RGB, drone thermal, and satellite multispectral streams, optimized for edge inference on NVIDIA Jetson with TensorRT FP16.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Evidence &amp; projections</h4>
+            <h4 data-i18n="r_h_evidence">Evidence &amp; projections</h4>
             <ul>
-              <li>Evaluated against <strong>3 public LILA BC benchmarks totaling 8.74M images</strong> (Snapshot Serengeti, WCS/iWildCam, Caltech Camera Traps).</li>
-              <li>A proof-of-concept on 1,150 Serengeti frames beats a pixel-MSE baseline (AUC 0.561 vs 0.544) with statistically significant error separation (p = 0.020) — confirming 700 unlabeled images suffice to learn a normality representation.</li>
-              <li>Theoretical projections: <strong>0.93 F1 for poacher detection</strong>, 0.86 for injured animals, with ~0.04 cross-ecosystem transfer penalty.</li>
+              <li data-i18n="r_e1">Evaluated against <strong>3 public LILA BC benchmarks totaling 8.74M images</strong> (Snapshot Serengeti, WCS/iWildCam, Caltech Camera Traps).</li>
+              <li data-i18n="r_e2">A proof-of-concept on 1,150 Serengeti frames beats a pixel-MSE baseline (AUC 0.561 vs 0.544) with statistically significant error separation (p = 0.020) — confirming 700 unlabeled images suffice to learn a normality representation.</li>
+              <li data-i18n="r_e3">Theoretical projections: <strong>0.93 F1 for poacher detection</strong>, 0.86 for injured animals, with ~0.04 cross-ecosystem transfer penalty.</li>
             </ul>
           </div>
           <div class="case-block">
-            <h4>Deployment realism</h4>
+            <h4 data-i18n="r_h_deploy">Deployment realism</h4>
             <ul>
-              <li>Complete bill of materials at <strong>$1,718 per solar-powered station</strong> (45 FPS at 10 W on Jetson Xavier NX) and a six-step field protocol requiring no ML expertise from rangers.</li>
-              <li>Honest scoping throughout: headline accuracy figures are labeled theoretical projections, with live-deployment validation named as the primary future work.</li>
+              <li data-i18n="r_d1">Complete bill of materials at <strong>$1,718 per solar-powered station</strong> (45 FPS at 10 W on Jetson Xavier NX) and a six-step field protocol requiring no ML expertise from rangers.</li>
+              <li data-i18n="r_d2">Honest scoping throughout: headline accuracy figures are labeled theoretical projections, with live-deployment validation named as the primary future work.</li>
             </ul>
           </div>
         </div>
@@ -352,39 +362,39 @@
 
   <section class="section" id="more-projects">
     <div class="container">
-      <h2 class="section-title">More on GitHub</h2>
-      <p class="section-sub">Other public repositories, loaded live from the GitHub API.</p>
+      <h2 class="section-title" data-i18n="sec_more_title">More on GitHub</h2>
+      <p class="section-sub" data-i18n="sec_more_sub">Other public repositories, loaded live from the GitHub API.</p>
       <div class="repo-grid" id="repo-grid">
-        <p class="repo-loading">Loading repositories…</p>
+        <p class="repo-loading" data-i18n="repo_loading">Loading repositories…</p>
       </div>
     </div>
   </section>
 
   <section class="section" id="about">
     <div class="container about">
-      <h2 class="section-title">About me</h2>
+      <h2 class="section-title" data-i18n="sec_about_title">About me</h2>
       <div class="about-grid">
         <div>
-          <p>
+          <p data-i18n="about_p1">
             I'm Alexander — a data scientist who cares about the step most dashboards skip:
             making it possible for the person on the other side of the screen to challenge the number.
             My work spans humanitarian information management, sustainable finance, clinical risk modeling,
             and industrial condition monitoring.
           </p>
-          <p>
+          <p data-i18n="about_p2">
             Common threads across everything I build: reproducible pipelines from a fresh clone,
             documented data provenance and licensing, multilingual interfaces, and metrics reported
             with their limitations — not just their headline value.
           </p>
-          <p>
+          <p data-i18n="about_p3">
             Outside of work you'll find me on a trail, a climbing wall, or a snowboard —
             which is why one of my projects is an offline expedition log.
           </p>
         </div>
         <div class="about-links">
-          <h4>Languages</h4>
-          <p class="about-langs">English · French · German · Mandarin Chinese</p>
-          <h4>Find me</h4>
+          <h4 data-i18n="about_h_lang">Languages</h4>
+          <p class="about-langs" data-i18n="about_langs">English · French · German · Mandarin Chinese</p>
+          <h4 data-i18n="about_h_find">Find me</h4>
           <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener">GitHub ↗</a>
           <a href="mailto:alexanderduckworthhu@gmail.com">alexanderduckworthhu@gmail.com</a>
           <!-- Add your LinkedIn URL here when ready:
@@ -398,10 +408,11 @@
 
 <footer class="footer">
   <div class="container">
-    <p>© <span id="year"></span> Alexander Duckworth · Built by hand with plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    <p>© <span id="year"></span> Alexander Duckworth · <span data-i18n="footer_text">Built by hand with plain HTML/CSS/JS · Hosted on GitHub Pages</span></p>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
