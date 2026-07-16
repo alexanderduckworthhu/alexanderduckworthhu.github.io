@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexander Duckworth — Data Science Portfolio</title>
+  <meta name="description" content="Data scientist building decision-support tools for humanitarian analytics, sustainable finance, clinical ML, and industrial monitoring. Seven case studies with measurable results." />
+  <meta property="og:title" content="Alexander Duckworth — Data Science Portfolio" />
+  <meta property="og:description" content="Decision-support dashboards, multilingual RAG, calibrated clinical ML, and predictive maintenance — with honest metrics and documented trade-offs." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">AD<span class="accent">.</span></a>
+    <div class="nav-links">
+      <a href="#projects">Case studies</a>
+      <a href="#more-projects">More projects</a>
+      <a href="#about">About</a>
+      <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <p class="hero-kicker">Alexander Duckworth · Data Science &amp; ML</p>
+    <h1>I build decision-support tools<br />that people can <span class="accent">interrogate</span>,<br />not just look at.</h1>
+    <p class="hero-sub">
+      Humanitarian analytics, sustainable finance, clinical ML, and industrial monitoring —
+      every project ships with explicit trade-offs, reproducible pipelines, and honest metrics.
+      Multilingual by default (EN·FR·DE·IT·PT·ZH·RU).
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View case studies</a>
+      <a href="mailto:alexanderduckworthhu@gmail.com" class="btn btn-ghost">Get in touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">featured projects</span></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">UI languages supported</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">reproducible from clone</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Case studies</h2>
+      <p class="section-sub">Each project answers one narrow question well — with the reasoning behind every stack choice and the numbers to back it up.</p>
+
+      <!-- 1. Where Needs Overlap -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Humanitarian data · Geospatial analytics</p>
+            <h3>Where Needs Overlap</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/where-needs-overlap" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">A country-level dashboard showing where acute food insecurity, hosted displacement, and under-5 mortality <em>coincide</em> — built for IM and programme analysts working with UNICEF, UNHCR, and OCHA counterparts.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Joined three live public APIs (HDX/IPC, UNHCR, WHO GHO) on ISO3 with documented definitions — origin vs asylum counts answer different questions, so country-of-asylum was locked in.</li>
+              <li>Deliberately <strong>no ML forecasting</strong>: unverifiable crisis prediction would undermine trust; the tool frames one decision question instead.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li>Surfaced <strong>3 dual-pressure countries</strong> (Sudan, Ethiopia, Chad) above both focus-set medians across ~48.6M people in IPC Phase 3+.</li>
+              <li>Coverage gaps flagged explicitly rather than silently imputed.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>Streamlit</span><span>Plotly</span><span>pandas</span><span>HDX API</span><span>UNHCR API</span><span>WHO GHO</span><span>i18n ×7</span>
+        </div>
+      </article>
+
+      <!-- 2. WHO Guidance QA -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">NLP · Retrieval-augmented generation</p>
+            <h3>WHO Guidance QA — Multilingual RAG</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/multilingual-rag-assistant" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">A document QA assistant over WHO topic guidance that indexes English and French in one vector space, answers with passage-level citations, and <em>refuses</em> when retrieval is weak.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Chose <code>multilingual-e5-small</code> over OpenAI embeddings for a shared EN/FR space and fully offline demos; Chroma over Pinecone for zero cloud cost and inspectable indexes.</li>
+              <li>Trust stack: distance gate → closed-context prompt → chunk-ID citations → verifiable source passages in the UI. No "zero hallucination" claims — retrieval quality is the measured engineering claim.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li><strong>Precision@5 = 0.65 · MRR = 0.938</strong> on a golden-query eval set, reproducible with one command.</li>
+              <li>Works without any API key via an extractive fallback path.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>ChromaDB</span><span>multilingual-e5</span><span>GPT-4o-mini</span><span>Streamlit</span><span>Retrieval eval</span>
+        </div>
+      </article>
+
+      <!-- 3. ICU mortality -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Clinical ML · Explainability</p>
+            <h3>ICU 48-hour Mortality Risk with SHAP Attribution</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/icu-mortality-vital-shap" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">Calibrated short-horizon mortality risk from vital-sign time series — plus a SHAP heatmap showing <em>which vital × lookback window</em> pushed each score, so clinicians can agree, challenge, or investigate.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Isotonic-calibrated logistic regression before any deep model: most MIMIC tutorials stop at AUROC and skip calibration, missingness honesty, and how the number should be spoken aloud.</li>
+              <li>Transparent preprocessing (plausibility gates, missingness flags, bounded forward-fill) chosen over MICE because opaque imputation is harder to defend in clinical review.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li>Full pipeline from raw vitals to calibrated probability + attribution, reproducible in three commands; MIMIC-III integration path documented under PhysioNet DUA.</li>
+              <li>Dedicated ethics &amp; uncertainty guidance shipped alongside the model.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>scikit-learn</span><span>SHAP</span><span>Calibration</span><span>Streamlit</span><span>MIMIC-III path</span>
+        </div>
+      </article>
+
+      <!-- 4. Climate Migration Risk Index -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Composite indices · Climate risk</p>
+            <h3>Climate Migration Risk Index</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/climate-migration-risk-index" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">A weight-defendable, scenario-stressable country index of climate-linked mobility pressure — combining climate, socioeconomic, conflict, and food fragility pillars on an interactive choropleth.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Transparent fixed pillar weights over PCA/AHP so an analyst can challenge every prior; a sensitivity tab compares equal-weight rankings.</li>
+              <li>1.5&nbsp;°C / 2&nbsp;°C scenarios scale the climate pillar only — communicating scenario thinking honestly without claiming a full climate model.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li><strong>42 countries scored</strong>; rank validation against ND-GAIN-like (ρ = 0.86) and INFORM-like (ρ = 0.90) references.</li>
+              <li>Every build writes provenance metadata; weights are versioned in config.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>Streamlit</span><span>Plotly choropleth</span><span>Composite scoring</span><span>Scenario analysis</span><span>i18n ×7</span>
+        </div>
+      </article>
+
+      <!-- 5. ESG Composite Scoring -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Sustainable finance · NLP</p>
+            <h3>ESG Composite Scoring</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/esg-composite-scoring" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">An auditable E/S/G composite for 25 public issuers that answers the client question vendor letter-grades can't: <em>"why does this name look strong or soft?"</em></p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Equal pillar weights as a transparent, decomposable prior — with leave-one-out sensitivity — instead of a vendor-style proprietary blend.</li>
+              <li>FinBERT for finance-domain headline tone, with a lexicon fallback that keeps the demo fully offline.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li>Directional validation vs public letter grades: <strong>Spearman ρ = 0.49 (p ≈ 0.012), 68% agreement within ±1 notch</strong> — framed honestly as a sanity check, not vendor parity.</li>
+              <li>Full drill-down UI: ranking → issuer profile → sense-check.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>FinBERT</span><span>Streamlit</span><span>Plotly</span><span>Ordinal validation</span>
+        </div>
+      </article>
+
+      <!-- 6. CNC Machine Health -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Predictive maintenance · IoT / OT</p>
+            <h3>CNC Spindle Health Monitor</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/cnc-machine-health" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">A Plotly Dash floor board that turns multivariate sensor streams into per-cell health scores, time-to-failure estimates, and maintenance notes — designed for precision-manufacturing environments where failure labels don't exist on day one.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Unsupervised Isolation Forest on windowed statistics instead of an LSTM autoencoder — works without labeled failures and stays explainable to plant engineers.</li>
+              <li>Mock OPC-UA tag layer (<code>ns=2;s=CNC-01.Spindle…</code>) demonstrates real IT/OT architecture without pretending plant access; NASA CMAPSS degradation structure remapped to CNC vocabulary with the mapping documented.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li><strong>182 scored windows across a 4-machine fleet</strong> with traffic-light thresholds matching shop-floor language (green ≥ 75 / amber ≥ 50 / red).</li>
+              <li>One click on a cell card refreshes sensor traces and maintenance notes; 8-language UI.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>Plotly Dash</span><span>Isolation Forest</span><span>OPC-UA</span><span>NASA CMAPSS</span><span>i18n ×8</span>
+        </div>
+      </article>
+
+      <!-- 7. Wild Log -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Mobile · Offline-first</p>
+            <h3>Wild Log</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/alexanderduckworthhu/wild_log" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook">An offline personal expedition log for outdoor athletes — session history, map memory, and honest consistency metrics across 7 activity types, with no account, no cloud, and no social feed.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>Challenge &amp; trade-offs</h4>
+            <ul>
+              <li>Drift (SQLite) over Hive because streaks, type counts, and elevation aggregates need relational queries — not key-value storage.</li>
+              <li>Shared columns + per-activity <code>detailsJson</code> keep distance/elevation queryable while snow conditions and route grades stay type-native, avoiding a nullable-column explosion.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Impact</h4>
+            <ul>
+              <li><strong>1-tap quick-log</strong> from the dashboard with activity preselected; fully usable offline (OSM tiles only when viewing the map).</li>
+              <li>All PII stays on device; streak/records logic covered by unit tests, analyzer-clean codebase.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Flutter</span><span>Dart</span><span>Riverpod</span><span>Drift / SQLite</span><span>flutter_map</span><span>OpenStreetMap</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section section-alt" id="more-projects">
+    <div class="container">
+      <h2 class="section-title">More on GitHub</h2>
+      <p class="section-sub">Other public repositories, loaded live from the GitHub API.</p>
+      <div class="repo-grid" id="repo-grid">
+        <p class="repo-loading">Loading repositories…</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container about">
+      <h2 class="section-title">About me</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            I'm Alexander — a data scientist who cares about the step most dashboards skip:
+            making it possible for the person on the other side of the screen to challenge the number.
+            My work spans humanitarian information management, sustainable finance, clinical risk modeling,
+            and industrial condition monitoring.
+          </p>
+          <p>
+            Common threads across everything I build: reproducible pipelines from a fresh clone,
+            documented data provenance and licensing, multilingual interfaces, and metrics reported
+            with their limitations — not just their headline value.
+          </p>
+          <p>
+            Outside of work you'll find me on a trail, a climbing wall, or a snowboard —
+            which is why one of my projects is an offline expedition log.
+          </p>
+        </div>
+        <div class="about-links">
+          <h4>Find me</h4>
+          <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="mailto:alexanderduckworthhu@gmail.com">alexanderduckworthhu@gmail.com</a>
+          <!-- Add your LinkedIn URL here when ready:
+          <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn ↗</a>
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> Alexander Duckworth · Built by hand with plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
