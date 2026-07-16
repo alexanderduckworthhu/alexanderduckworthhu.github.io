@@ -148,6 +148,14 @@ body {
   background: var(--accent-dim); padding: 1px 6px; border-radius: 5px;
 }
 
+.paper-authors {
+  margin-top: 14px; font-family: var(--mono); font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.about-langs {
+  color: var(--text) !important; font-size: 0.95rem; margin-bottom: 22px;
+}
+
 .tags { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
 .tags span {
   font-family: var(--mono); font-size: 0.76rem;

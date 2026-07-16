@@ -21,6 +21,7 @@
     <a href="#top" class="nav-logo">AD<span class="accent">.</span></a>
     <div class="nav-links">
       <a href="#projects">Case studies</a>
+      <a href="#research">Research</a>
       <a href="#more-projects">More projects</a>
       <a href="#about">About</a>
       <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
@@ -35,7 +36,7 @@
     <p class="hero-sub">
       Humanitarian analytics, sustainable finance, clinical ML, and industrial monitoring —
       every project ships with explicit trade-offs, reproducible pipelines, and honest metrics.
-      Multilingual by default (EN·FR·DE·IT·PT·ZH·RU).
+      I work across English, French, German, and Mandarin Chinese.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View case studies</a>
@@ -43,7 +44,7 @@
     </div>
     <div class="hero-stats">
       <div class="stat"><span class="stat-num">7</span><span class="stat-label">featured projects</span></div>
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label">UI languages supported</span></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">peer-style research paper</span></div>
       <div class="stat"><span class="stat-num">100%</span><span class="stat-label">reproducible from clone</span></div>
     </div>
   </div>
@@ -84,7 +85,7 @@
           </div>
         </div>
         <div class="tags">
-          <span>Python</span><span>Streamlit</span><span>Plotly</span><span>pandas</span><span>HDX API</span><span>UNHCR API</span><span>WHO GHO</span><span>i18n ×7</span>
+          <span>Python</span><span>Streamlit</span><span>Plotly</span><span>pandas</span><span>HDX API</span><span>UNHCR API</span><span>WHO GHO</span><span>i18n</span>
         </div>
       </article>
 
@@ -183,7 +184,7 @@
           </div>
         </div>
         <div class="tags">
-          <span>Python</span><span>Streamlit</span><span>Plotly choropleth</span><span>Composite scoring</span><span>Scenario analysis</span><span>i18n ×7</span>
+          <span>Python</span><span>Streamlit</span><span>Plotly choropleth</span><span>Composite scoring</span><span>Scenario analysis</span><span>i18n</span>
         </div>
       </article>
 
@@ -249,7 +250,7 @@
           </div>
         </div>
         <div class="tags">
-          <span>Python</span><span>Plotly Dash</span><span>Isolation Forest</span><span>OPC-UA</span><span>NASA CMAPSS</span><span>i18n ×8</span>
+          <span>Python</span><span>Plotly Dash</span><span>Isolation Forest</span><span>OPC-UA</span><span>NASA CMAPSS</span><span>i18n</span>
         </div>
       </article>
 
@@ -289,7 +290,67 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="more-projects">
+  <section class="section section-alt" id="research">
+    <div class="container">
+      <h2 class="section-title">Research paper</h2>
+      <p class="section-sub">First-author work on applying self-supervised learning to conservation-scale imagery.</p>
+
+      <article class="case paper">
+        <div class="case-head">
+          <div>
+            <p class="case-domain">Computer vision · Self-supervised learning · Edge AI</p>
+            <h3>Self-Supervised Anomaly Detection for Wildlife Conservation and Biodiversity Monitoring</h3>
+          </div>
+          <div class="case-links">
+            <a href="self-supervised-wildlife-anomaly-detection.pdf" target="_blank" rel="noopener" class="btn btn-small">Read PDF ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/Self_Supervised_Anomaly_Detection_for_Wildlife_Conservation_and_Biodiversity_Monitoring" target="_blank" rel="noopener" class="btn btn-small">Code ↗</a>
+          </div>
+        </div>
+        <p class="paper-authors">Alexander Duckworth-Hu &amp; Parkpoom Chaisiriprasert · Department of Digital Innovation Technologies, Rangsit University (2026)</p>
+        <p class="case-hook">
+          A system-design proposal for detecting conservation-critical events — poaching, injured animals, invasive species — by learning what "normal" looks like from unlabeled camera-trap imagery, so the model flags anything statistically novel <em>without a single manual label</em>.
+        </p>
+
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>The problem &amp; the shift</h4>
+            <ul>
+              <li>Camera traps, drones, and satellites generate petabytes of imagery; the rarest, most safety-critical events (a poacher, a new invasive species) are exactly the ones supervised classifiers never saw in training and silently misclassify.</li>
+              <li>Reframes the question from <em>"which known class is this?"</em> to <em>"does this deviate from the learned normal distribution?"</em> — an open-set framing far better matched to conservation's open-ended threats.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Approach</h4>
+            <ul>
+              <li>SimCLR contrastive learning + Masked Autoencoding on a Vision Transformer, with temporal pretext tasks over camera-trap bursts; per-pixel reconstruction error becomes the anomaly score.</li>
+              <li>Multi-modal fusion of camera-trap RGB, drone thermal, and satellite multispectral streams, optimized for edge inference on NVIDIA Jetson with TensorRT FP16.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Evidence &amp; projections</h4>
+            <ul>
+              <li>Evaluated against <strong>3 public LILA BC benchmarks totaling 8.74M images</strong> (Snapshot Serengeti, WCS/iWildCam, Caltech Camera Traps).</li>
+              <li>A proof-of-concept on 1,150 Serengeti frames beats a pixel-MSE baseline (AUC 0.561 vs 0.544) with statistically significant error separation (p = 0.020) — confirming 700 unlabeled images suffice to learn a normality representation.</li>
+              <li>Theoretical projections: <strong>0.93 F1 for poacher detection</strong>, 0.86 for injured animals, with ~0.04 cross-ecosystem transfer penalty.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>Deployment realism</h4>
+            <ul>
+              <li>Complete bill of materials at <strong>$1,718 per solar-powered station</strong> (45 FPS at 10 W on Jetson Xavier NX) and a six-step field protocol requiring no ML expertise from rangers.</li>
+              <li>Honest scoping throughout: headline accuracy figures are labeled theoretical projections, with live-deployment validation named as the primary future work.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span>PyTorch</span><span>Vision Transformer</span><span>SimCLR</span><span>Masked Autoencoders</span><span>Contrastive learning</span><span>Anomaly detection</span><span>Multi-modal fusion</span><span>NVIDIA Jetson</span><span>TensorRT</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="more-projects">
     <div class="container">
       <h2 class="section-title">More on GitHub</h2>
       <p class="section-sub">Other public repositories, loaded live from the GitHub API.</p>
@@ -321,6 +382,8 @@
           </p>
         </div>
         <div class="about-links">
+          <h4>Languages</h4>
+          <p class="about-langs">English · French · German · Mandarin Chinese</p>
           <h4>Find me</h4>
           <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener">GitHub ↗</a>
           <a href="mailto:alexanderduckworthhu@gmail.com">alexanderduckworthhu@gmail.com</a>
