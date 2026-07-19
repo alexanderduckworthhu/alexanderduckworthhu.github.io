@@ -19,6 +19,10 @@ const I18N = {
     sec_case_sub: "Chaque projet répond avec précision à une question ciblée — avec le raisonnement derrière chaque choix technique et les chiffres pour l'étayer.",
     btn_code: "Code ↗",
     btn_pdf: "Lire le PDF ↗",
+    btn_demo: "Démo en ligne ↗",
+    demo_soon: "Démo bientôt disponible",
+    repo_fallback: "Parcourir tous les dépôts sur GitHub ↗",
+    c7_im3: "Logique de séries et de records testée unitairement ; base de code avec <strong>zéro avertissement de l'analyseur sur 24 fichiers source Dart</strong>.",
     h_challenge: "Défi &amp; arbitrages",
     h_impact: "Impact",
     c1_domain: "Données humanitaires · Analyse géospatiale",
@@ -111,6 +115,10 @@ const I18N = {
     sec_case_sub: "Jedes Projekt beantwortet eine eng gefasste Frage gut — mit der Begründung hinter jeder Technologiewahl und den Zahlen als Beleg.",
     btn_code: "Code ↗",
     btn_pdf: "PDF lesen ↗",
+    btn_demo: "Live-Demo ↗",
+    demo_soon: "Demo wird demnächst bereitgestellt",
+    repo_fallback: "Alle Repositories auf GitHub ansehen ↗",
+    c7_im3: "Serien- und Rekordlogik mit Unit-Tests; Codebasis mit <strong>null Analyzer-Warnungen über 24 Dart-Quelldateien</strong>.",
     h_challenge: "Herausforderung &amp; Abwägungen",
     h_impact: "Wirkung",
     c1_domain: "Humanitäre Daten · Geodatenanalyse",
@@ -203,6 +211,10 @@ const I18N = {
     sec_case_sub: "Ogni progetto risponde bene a una domanda mirata — con il ragionamento dietro ogni scelta tecnologica e i numeri a sostegno.",
     btn_code: "Codice ↗",
     btn_pdf: "Leggi il PDF ↗",
+    btn_demo: "Demo live ↗",
+    demo_soon: "Demo in arrivo",
+    repo_fallback: "Sfoglia tutti i repository su GitHub ↗",
+    c7_im3: "Logica di serie e record coperta da unit test; codebase con <strong>zero avvisi dell'analizzatore su 24 file sorgente Dart</strong>.",
     h_challenge: "Sfida e compromessi",
     h_impact: "Impatto",
     c1_domain: "Dati umanitari · Analisi geospaziale",
@@ -295,6 +307,10 @@ const I18N = {
     sec_case_sub: "Cada projeto responde bem a uma pergunta específica — com o raciocínio por trás de cada escolha técnica e os números que a sustentam.",
     btn_code: "Código ↗",
     btn_pdf: "Ler o PDF ↗",
+    btn_demo: "Demo ao vivo ↗",
+    demo_soon: "Demo em breve",
+    repo_fallback: "Ver todos os repositórios no GitHub ↗",
+    c7_im3: "Lógica de sequências e recordes com testes unitários; base de código com <strong>zero avisos do analisador em 24 arquivos-fonte Dart</strong>.",
     h_challenge: "Desafio e compromissos",
     h_impact: "Impacto",
     c1_domain: "Dados humanitários · Análise geoespacial",
@@ -387,6 +403,10 @@ const I18N = {
     sec_case_sub: "Cada proyecto responde bien a una pregunta concreta — con el razonamiento detrás de cada elección técnica y los números que lo respaldan.",
     btn_code: "Código ↗",
     btn_pdf: "Leer el PDF ↗",
+    btn_demo: "Demo en vivo ↗",
+    demo_soon: "Demo disponible pronto",
+    repo_fallback: "Ver todos los repositorios en GitHub ↗",
+    c7_im3: "Lógica de rachas y récords con pruebas unitarias; base de código con <strong>cero avisos del analizador en 24 archivos fuente Dart</strong>.",
     h_challenge: "Reto y compensaciones",
     h_impact: "Impacto",
     c1_domain: "Datos humanitarios · Análisis geoespacial",
@@ -479,6 +499,10 @@ const I18N = {
     sec_case_sub: "每个项目都精准回答一个聚焦的问题——附带每项技术选型背后的推理以及支撑它的数据。",
     btn_code: "代码 ↗",
     btn_pdf: "阅读 PDF ↗",
+    btn_demo: "在线演示 ↗",
+    demo_soon: "演示即将上线",
+    repo_fallback: "在 GitHub 上浏览所有仓库 ↗",
+    c7_im3: "连续记录与纪录逻辑经单元测试；代码库通过静态分析，<strong>24 个 Dart 源文件零警告</strong>。",
     h_challenge: "挑战与权衡",
     h_impact: "影响",
     c1_domain: "人道主义数据 · 地理空间分析",
@@ -571,6 +595,10 @@ const I18N = {
     sec_case_sub: "Каждый проект чётко отвечает на один узкий вопрос — с обоснованием каждого технического выбора и цифрами в его подтверждение.",
     btn_code: "Код ↗",
     btn_pdf: "Читать PDF ↗",
+    btn_demo: "Онлайн-демо ↗",
+    demo_soon: "Демо скоро будет доступно",
+    repo_fallback: "Смотреть все репозитории на GitHub ↗",
+    c7_im3: "Логика серий и рекордов покрыта модульными тестами; кодовая база с <strong>нулём предупреждений анализатора в 24 исходных файлах Dart</strong>.",
     h_challenge: "Задача и компромиссы",
     h_impact: "Результат",
     c1_domain: "Гуманитарные данные · Геопространственный анализ",
@@ -652,21 +680,29 @@ const I18N = {
   const defaults = {};
   nodes.forEach((n) => { defaults[n.getAttribute("data-i18n")] = n.innerHTML; });
 
+  const titleNodes = document.querySelectorAll("[data-i18n-title]");
+  const titleDefaults = {};
+  titleNodes.forEach((n) => { titleDefaults[n.getAttribute("data-i18n-title")] = n.getAttribute("title"); });
+
   function apply(lang) {
     const dict = I18N[lang];
     nodes.forEach((n) => {
       const key = n.getAttribute("data-i18n");
       n.innerHTML = dict && dict[key] != null ? dict[key] : defaults[key];
     });
-    document.documentElement.lang = lang;
-    try { localStorage.setItem("site-lang", lang); } catch (e) {}
+    titleNodes.forEach((n) => {
+      const key = n.getAttribute("data-i18n-title");
+      n.setAttribute("title", dict && dict[key] != null ? dict[key] : titleDefaults[key]);
+    });
+    document.documentElement.setAttribute("lang", lang);
+    try { localStorage.setItem("preferred-locale", lang); } catch (e) {}
     const sel = document.getElementById("lang-select");
     if (sel) sel.value = lang;
   }
 
   let initial = "en";
   try {
-    const saved = localStorage.getItem("site-lang");
+    const saved = localStorage.getItem("preferred-locale");
     if (saved && (saved === "en" || I18N[saved])) initial = saved;
     else {
       const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
