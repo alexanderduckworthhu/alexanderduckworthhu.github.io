@@ -20,8 +20,8 @@
   <div class="nav-inner">
     <a href="#top" class="nav-logo">AD<span class="accent">.</span></a>
     <div class="nav-links">
-      <a href="#projects" data-i18n="nav_case">Case studies</a>
       <a href="#research" data-i18n="nav_research">Research</a>
+      <a href="#projects" data-i18n="nav_case">Case studies</a>
       <a href="#more-projects" data-i18n="nav_more">More projects</a>
       <a href="#about" data-i18n="nav_about">About</a>
       <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a>
@@ -61,6 +61,66 @@
 </header>
 
 <main>
+  <section class="section section-alt" id="research">
+    <div class="container">
+      <h2 class="section-title" data-i18n="sec_research_title">Research paper</h2>
+      <p class="section-sub" data-i18n="sec_research_sub">First-author work on applying self-supervised learning to conservation-scale imagery.</p>
+
+      <article class="case paper">
+        <div class="case-head">
+          <div>
+            <p class="case-domain" data-i18n="r_domain">Computer vision · Self-supervised learning · Edge AI</p>
+            <h3>Self-Supervised Anomaly Detection for Wildlife Conservation and Biodiversity Monitoring</h3>
+          </div>
+          <div class="case-links">
+            <a href="self-supervised-wildlife-anomaly-detection.pdf" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_pdf">Read PDF ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/Self_Supervised_Anomaly_Detection_for_Wildlife_Conservation_and_Biodiversity_Monitoring" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
+          </div>
+        </div>
+        <p class="paper-authors">Alexander Duckworth-Hu &amp; Parkpoom Chaisiriprasert · <span data-i18n="r_affil">Department of Digital Innovation Technologies, Rangsit University (2026)</span></p>
+        <p class="case-hook" data-i18n="r_hook">
+          A system-design proposal for detecting conservation-critical events — poaching, injured animals, invasive species — by learning what "normal" looks like from unlabeled camera-trap imagery, so the model flags anything statistically novel <em>without a single manual label</em>.
+        </p>
+
+        <div class="case-grid">
+          <div class="case-block">
+            <h4 data-i18n="r_h_problem">The problem &amp; the shift</h4>
+            <ul>
+              <li data-i18n="r_p1">Camera traps, drones, and satellites generate petabytes of imagery; the rarest, most safety-critical events (a poacher, a new invasive species) are exactly the ones supervised classifiers never saw in training and silently misclassify.</li>
+              <li data-i18n="r_p2">Reframes the question from <em>"which known class is this?"</em> to <em>"does this deviate from the learned normal distribution?"</em> — an open-set framing far better matched to conservation's open-ended threats.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4 data-i18n="r_h_approach">Approach</h4>
+            <ul>
+              <li data-i18n="r_a1">SimCLR contrastive learning + Masked Autoencoding on a Vision Transformer, with temporal pretext tasks over camera-trap bursts; per-pixel reconstruction error becomes the anomaly score.</li>
+              <li data-i18n="r_a2">Multi-modal fusion of camera-trap RGB, drone thermal, and satellite multispectral streams, optimized for edge inference on NVIDIA Jetson with TensorRT FP16.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4 data-i18n="r_h_evidence">Evidence &amp; projections</h4>
+            <ul>
+              <li data-i18n="r_e1">Evaluated against <strong>3 public LILA BC benchmarks totaling 8.74M images</strong> (Snapshot Serengeti, WCS/iWildCam, Caltech Camera Traps).</li>
+              <li data-i18n="r_e2">A proof-of-concept on 1,150 Serengeti frames beats a pixel-MSE baseline (AUC 0.561 vs 0.544) with statistically significant error separation (p = 0.020) — confirming 700 unlabeled images suffice to learn a normality representation.</li>
+              <li data-i18n="r_e3">Theoretical projections: <strong>0.93 F1 for poacher detection</strong>, 0.86 for injured animals, with ~0.04 cross-ecosystem transfer penalty.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4 data-i18n="r_h_deploy">Deployment realism</h4>
+            <ul>
+              <li data-i18n="r_d1">Complete bill of materials at <strong>$1,718 per solar-powered station</strong> (45 FPS at 10 W on Jetson Xavier NX) and a six-step field protocol requiring no ML expertise from rangers.</li>
+              <li data-i18n="r_d2">Honest scoping throughout: headline accuracy figures are labeled theoretical projections, with live-deployment validation named as the primary future work.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span>PyTorch</span><span>Vision Transformer</span><span>SimCLR</span><span>Masked Autoencoders</span><span>Contrastive learning</span><span>Anomaly detection</span><span>Multi-modal fusion</span><span>NVIDIA Jetson</span><span>TensorRT</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="section" id="projects">
     <div class="container">
       <h2 class="section-title" data-i18n="sec_case_title">Case studies</h2>
@@ -71,7 +131,7 @@
         <div class="case-head">
           <div>
             <p class="case-domain" data-i18n="c1_domain">Humanitarian data · Geospatial analytics</p>
-            <h3>Where Needs Overlap</h3>
+            <h3 data-i18n="c1_title">Where Needs Overlap</h3>
           </div>
           <div class="case-links">
             <a href="#" class="btn btn-small" data-status="coming-soon" title="Demo deploying soon" data-i18n-title="demo_soon" data-i18n="btn_demo">Live demo ↗</a>
@@ -105,7 +165,7 @@
         <div class="case-head">
           <div>
             <p class="case-domain" data-i18n="c2_domain">NLP · Retrieval-augmented generation</p>
-            <h3>WHO Guidance QA — Multilingual RAG</h3>
+            <h3 data-i18n="c2_title">WHO Guidance QA — Multilingual RAG</h3>
           </div>
           <div class="case-links">
             <a href="#" class="btn btn-small" data-status="coming-soon" title="Demo deploying soon" data-i18n-title="demo_soon" data-i18n="btn_demo">Live demo ↗</a>
@@ -139,7 +199,7 @@
         <div class="case-head">
           <div>
             <p class="case-domain" data-i18n="c3_domain">Clinical ML · Explainability</p>
-            <h3>ICU 48-hour Mortality Risk with SHAP Attribution</h3>
+            <h3 data-i18n="c3_title">ICU 48-hour Mortality Risk with SHAP Attribution</h3>
           </div>
           <div class="case-links">
             <a href="#" class="btn btn-small" data-status="coming-soon" title="Demo deploying soon" data-i18n-title="demo_soon" data-i18n="btn_demo">Live demo ↗</a>
@@ -173,7 +233,7 @@
         <div class="case-head">
           <div>
             <p class="case-domain" data-i18n="c4_domain">Composite indices · Climate risk</p>
-            <h3>Climate Migration Risk Index</h3>
+            <h3 data-i18n="c4_title">Climate Migration Risk Index</h3>
           </div>
           <div class="case-links">
             <a href="#" class="btn btn-small" data-status="coming-soon" title="Demo deploying soon" data-i18n-title="demo_soon" data-i18n="btn_demo">Live demo ↗</a>
@@ -207,7 +267,7 @@
         <div class="case-head">
           <div>
             <p class="case-domain" data-i18n="c5_domain">Sustainable finance · NLP</p>
-            <h3>ESG Composite Scoring</h3>
+            <h3 data-i18n="c5_title">ESG Composite Scoring</h3>
           </div>
           <div class="case-links">
             <a href="#" class="btn btn-small" data-status="coming-soon" title="Demo deploying soon" data-i18n-title="demo_soon" data-i18n="btn_demo">Live demo ↗</a>
@@ -241,7 +301,7 @@
         <div class="case-head">
           <div>
             <p class="case-domain" data-i18n="c6_domain">Predictive maintenance · IoT / OT</p>
-            <h3>CNC Spindle Health Monitor</h3>
+            <h3 data-i18n="c6_title">CNC Spindle Health Monitor</h3>
           </div>
           <div class="case-links">
             <a href="#" class="btn btn-small" data-status="coming-soon" title="Demo deploying soon" data-i18n-title="demo_soon" data-i18n="btn_demo">Live demo ↗</a>
@@ -307,66 +367,6 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="research">
-    <div class="container">
-      <h2 class="section-title" data-i18n="sec_research_title">Research paper</h2>
-      <p class="section-sub" data-i18n="sec_research_sub">First-author work on applying self-supervised learning to conservation-scale imagery.</p>
-
-      <article class="case paper">
-        <div class="case-head">
-          <div>
-            <p class="case-domain" data-i18n="r_domain">Computer vision · Self-supervised learning · Edge AI</p>
-            <h3>Self-Supervised Anomaly Detection for Wildlife Conservation and Biodiversity Monitoring</h3>
-          </div>
-          <div class="case-links">
-            <a href="self-supervised-wildlife-anomaly-detection.pdf" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_pdf">Read PDF ↗</a>
-            <a href="https://github.com/alexanderduckworthhu/Self_Supervised_Anomaly_Detection_for_Wildlife_Conservation_and_Biodiversity_Monitoring" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
-          </div>
-        </div>
-        <p class="paper-authors">Alexander Duckworth-Hu &amp; Parkpoom Chaisiriprasert · <span data-i18n="r_affil">Department of Digital Innovation Technologies, Rangsit University (2026)</span></p>
-        <p class="case-hook" data-i18n="r_hook">
-          A system-design proposal for detecting conservation-critical events — poaching, injured animals, invasive species — by learning what "normal" looks like from unlabeled camera-trap imagery, so the model flags anything statistically novel <em>without a single manual label</em>.
-        </p>
-
-        <div class="case-grid">
-          <div class="case-block">
-            <h4 data-i18n="r_h_problem">The problem &amp; the shift</h4>
-            <ul>
-              <li data-i18n="r_p1">Camera traps, drones, and satellites generate petabytes of imagery; the rarest, most safety-critical events (a poacher, a new invasive species) are exactly the ones supervised classifiers never saw in training and silently misclassify.</li>
-              <li data-i18n="r_p2">Reframes the question from <em>"which known class is this?"</em> to <em>"does this deviate from the learned normal distribution?"</em> — an open-set framing far better matched to conservation's open-ended threats.</li>
-            </ul>
-          </div>
-          <div class="case-block">
-            <h4 data-i18n="r_h_approach">Approach</h4>
-            <ul>
-              <li data-i18n="r_a1">SimCLR contrastive learning + Masked Autoencoding on a Vision Transformer, with temporal pretext tasks over camera-trap bursts; per-pixel reconstruction error becomes the anomaly score.</li>
-              <li data-i18n="r_a2">Multi-modal fusion of camera-trap RGB, drone thermal, and satellite multispectral streams, optimized for edge inference on NVIDIA Jetson with TensorRT FP16.</li>
-            </ul>
-          </div>
-          <div class="case-block">
-            <h4 data-i18n="r_h_evidence">Evidence &amp; projections</h4>
-            <ul>
-              <li data-i18n="r_e1">Evaluated against <strong>3 public LILA BC benchmarks totaling 8.74M images</strong> (Snapshot Serengeti, WCS/iWildCam, Caltech Camera Traps).</li>
-              <li data-i18n="r_e2">A proof-of-concept on 1,150 Serengeti frames beats a pixel-MSE baseline (AUC 0.561 vs 0.544) with statistically significant error separation (p = 0.020) — confirming 700 unlabeled images suffice to learn a normality representation.</li>
-              <li data-i18n="r_e3">Theoretical projections: <strong>0.93 F1 for poacher detection</strong>, 0.86 for injured animals, with ~0.04 cross-ecosystem transfer penalty.</li>
-            </ul>
-          </div>
-          <div class="case-block">
-            <h4 data-i18n="r_h_deploy">Deployment realism</h4>
-            <ul>
-              <li data-i18n="r_d1">Complete bill of materials at <strong>$1,718 per solar-powered station</strong> (45 FPS at 10 W on Jetson Xavier NX) and a six-step field protocol requiring no ML expertise from rangers.</li>
-              <li data-i18n="r_d2">Honest scoping throughout: headline accuracy figures are labeled theoretical projections, with live-deployment validation named as the primary future work.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tags">
-          <span>PyTorch</span><span>Vision Transformer</span><span>SimCLR</span><span>Masked Autoencoders</span><span>Contrastive learning</span><span>Anomaly detection</span><span>Multi-modal fusion</span><span>NVIDIA Jetson</span><span>TensorRT</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <section class="section" id="more-projects">
     <div class="container">
       <h2 class="section-title" data-i18n="sec_more_title">More on GitHub</h2>
@@ -404,9 +404,7 @@
           <h4 data-i18n="about_h_find">Find me</h4>
           <a href="https://github.com/alexanderduckworthhu" target="_blank" rel="noopener">GitHub ↗</a>
           <a href="mailto:alexanderduckworthhu@gmail.com">alexanderduckworthhu@gmail.com</a>
-          <!-- Add your LinkedIn URL here when ready:
-          <a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn ↗</a>
-          -->
+          <a href="https://www.linkedin.com/in/alexander-duckworth/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
     </div>
