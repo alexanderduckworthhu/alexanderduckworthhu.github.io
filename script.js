@@ -101,8 +101,8 @@ document.querySelectorAll('[data-status="coming-soon"]').forEach((el) => {
       let bestHeight = 0;
       entriesById.forEach((e, id) => {
         if (!e.isIntersecting) return;
-        // A section counts as "in view" when 30% of it is visible, or ;
-        // for sections taller than the viewport ; when it fills 30% of the screen.
+        // A section counts as "in view" when 30% of it is visible, or.
+        // for sections taller than the viewport, when it fills 30% of the screen.
         const viewportShare = e.intersectionRect.height / window.innerHeight;
         if (e.intersectionRatio >= 0.3 || viewportShare >= 0.3) {
           if (e.intersectionRect.height > bestHeight) {
