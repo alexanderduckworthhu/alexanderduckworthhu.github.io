@@ -1,6 +1,6 @@
 # alexanderduckworthhu.github.io
 
-Personal data-science portfolio ; live at **https://alexanderduckworthhu.github.io**.
+Personal data-science portfolio, live at **https://alexanderduckworthhu.github.io**.
 
 ## Stack
 
