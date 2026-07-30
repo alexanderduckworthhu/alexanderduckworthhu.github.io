@@ -924,22 +924,63 @@ const I18N = {
   const titleDefaults = {};
   titleNodes.forEach((n) => { titleDefaults[n.getAttribute("data-i18n-title")] = n.getAttribute("title"); });
 
-  function apply(lang) {
+  const simplifyBtn = document.getElementById("simplify-toggle");
+  let simpleMode = false;
+  try {
+    simpleMode = localStorage.getItem("portfolio-simple") === "1";
+  } catch (e) {}
+
+  function lookup(lang, key) {
+    if (simpleMode && typeof I18N_SIMPLE !== "undefined") {
+      const simpleDict = I18N_SIMPLE[lang] || I18N_SIMPLE.en;
+      if (simpleDict && simpleDict[key] != null) return simpleDict[key];
+      if (I18N_SIMPLE.en && I18N_SIMPLE.en[key] != null) return I18N_SIMPLE.en[key];
+    }
     const dict = I18N[lang];
+    if (dict && dict[key] != null) return dict[key];
+    return defaults[key];
+  }
+
+  function updateSimplifyButton(lang) {
+    if (!simplifyBtn) return;
+    const key = simpleMode ? "btn_detailed" : "btn_simplify";
+    let label = simpleMode ? "Detailed" : "Simplify";
+    if (simpleMode && typeof I18N_SIMPLE !== "undefined") {
+      const d = I18N_SIMPLE[lang] || I18N_SIMPLE.en;
+      if (d && d[key] != null) label = d[key];
+    } else if (typeof I18N_SIMPLE !== "undefined") {
+      const d = I18N_SIMPLE[lang] || I18N_SIMPLE.en;
+      if (d && d.btn_simplify != null) label = d.btn_simplify;
+    }
+    simplifyBtn.textContent = label;
+    simplifyBtn.setAttribute("aria-pressed", simpleMode ? "true" : "false");
+    document.body.classList.toggle("is-simple", simpleMode);
+  }
+
+  function apply(lang) {
     nodes.forEach((n) => {
       const key = n.getAttribute("data-i18n");
-      n.innerHTML = dict && dict[key] != null ? dict[key] : defaults[key];
+      const value = lookup(lang, key);
+      if (value != null) n.innerHTML = value;
     });
     titleNodes.forEach((n) => {
       const key = n.getAttribute("data-i18n-title");
-      n.setAttribute("title", dict && dict[key] != null ? dict[key] : titleDefaults[key]);
+      const value = lookup(lang, key);
+      n.setAttribute("title", value != null ? value : titleDefaults[key]);
     });
     document.documentElement.setAttribute("lang", lang);
     document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
     try { localStorage.setItem("preferred-locale", lang); } catch (e) {}
     const sel = document.getElementById("lang-select");
     if (sel) sel.value = lang;
-    document.dispatchEvent(new CustomEvent("portfolio:langchange", { detail: { lang } }));
+    updateSimplifyButton(lang);
+    document.dispatchEvent(new CustomEvent("portfolio:langchange", { detail: { lang, simple: simpleMode } }));
+  }
+
+  function currentLang() {
+    const sel = document.getElementById("lang-select");
+    if (sel && sel.value) return sel.value;
+    return document.documentElement.lang || "en";
   }
 
   let initial = "en";
@@ -955,8 +996,20 @@ const I18N = {
   const sel = document.getElementById("lang-select");
   if (sel) sel.addEventListener("change", (e) => apply(e.target.value));
 
-  if (initial !== "en") apply(initial);
-  else if (sel) sel.value = "en";
+  if (simplifyBtn) {
+    simplifyBtn.addEventListener("click", () => {
+      simpleMode = !simpleMode;
+      try { localStorage.setItem("portfolio-simple", simpleMode ? "1" : "0"); } catch (e) {}
+      apply(currentLang());
+    });
+  }
+
+  apply(initial);
 
   window.__applyLang = apply;
+  window.__setSimpleMode = (on) => {
+    simpleMode = !!on;
+    try { localStorage.setItem("portfolio-simple", simpleMode ? "1" : "0"); } catch (e) {}
+    apply(currentLang());
+  };
 })();

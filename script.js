@@ -26,8 +26,25 @@ let rotateTimer = null;
 
 function i18nLabel(key, fallback) {
   const lang = document.documentElement.lang || "en";
+  const simple = document.body.classList.contains("is-simple");
+  if (
+    simple &&
+    typeof I18N_SIMPLE !== "undefined" &&
+    I18N_SIMPLE[lang] &&
+    I18N_SIMPLE[lang][key]
+  ) {
+    return I18N_SIMPLE[lang][key];
+  }
   if (typeof I18N !== "undefined" && I18N[lang] && I18N[lang][key]) {
     return I18N[lang][key];
+  }
+  if (
+    simple &&
+    typeof I18N_SIMPLE !== "undefined" &&
+    I18N_SIMPLE.en &&
+    I18N_SIMPLE.en[key]
+  ) {
+    return I18N_SIMPLE.en[key];
   }
   return fallback;
 }
