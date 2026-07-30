@@ -182,6 +182,11 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;
 }
 .repo-loading { color: var(--text-dim); font-family: var(--mono); font-size: 0.9rem; }
+.repo-actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: flex-start;
+}
 .repo-card {
   display: flex; flex-direction: column; gap: 10px;
   background: var(--card); border: 1px solid var(--card-border);
