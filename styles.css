@@ -227,6 +227,27 @@ body {
   color: var(--text-dim); font-size: 0.85rem;
 }
 
+/* ── RTL (Arabic) ────────────────────── */
+html[dir="rtl"] body { text-align: right; }
+html[dir="rtl"] .nav-inner { flex-direction: row-reverse; }
+html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+html[dir="rtl"] .hero-actions,
+html[dir="rtl"] .hero-stats,
+html[dir="rtl"] .case-links,
+html[dir="rtl"] .case-head,
+html[dir="rtl"] .tags,
+html[dir="rtl"] .repo-meta { flex-direction: row-reverse; }
+html[dir="rtl"] .hero-kicker,
+html[dir="rtl"] .hero-sub,
+html[dir="rtl"] .section-sub,
+html[dir="rtl"] .case-hook,
+html[dir="rtl"] .stat,
+html[dir="rtl"] .about-links { text-align: right; }
+html[dir="rtl"] .case-block li { padding-left: 0; padding-right: 20px; }
+html[dir="rtl"] .case-block li::before { left: auto; right: 0; }
+html[dir="rtl"] .repo-lang::before { margin-right: 0; margin-left: 6px; }
+html[dir="rtl"] .lang-select { direction: ltr; }
+
 /* ── Responsive ──────────────────────── */
 @media (max-width: 760px) {
   .nav-links { gap: 16px; }
