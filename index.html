@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alexander Duckworth: Data Science Portfolio</title>
-  <meta name="description" content="Data scientist building decision-support tools for humanitarian analytics, sustainable finance, clinical ML, and industrial monitoring. Seven case studies with measurable results." />
+  <meta name="description" content="Data scientist building decision-support tools for humanitarian analytics, sustainable finance, clinical ML, digital health, and industrial monitoring. Eight case studies with measurable results." />
   <meta property="og:title" content="Alexander Duckworth: Data Science Portfolio" />
   <meta property="og:description" content="Decision-support dashboards, multilingual RAG, calibrated clinical ML, and predictive maintenance, with honest metrics and documented trade-offs." />
   <meta property="og:type" content="website" />
@@ -54,7 +54,7 @@
       <a href="mailto:alexanderduckworthhu@gmail.com" class="btn btn-ghost" data-i18n="hero_btn_ghost">Get in touch</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label" data-i18n="stat_projects">featured projects</span></div>
+      <div class="stat"><span class="stat-num">8</span><span class="stat-label" data-i18n="stat_projects">featured projects</span></div>
       <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-i18n="stat_paper">peer-style research paper</span></div>
       <div class="stat"><span class="stat-num">100%</span><span class="stat-label" data-i18n="stat_repro">reproducible from clone</span></div>
     </div>
@@ -229,7 +229,41 @@
         </div>
       </article>
 
-      <!-- 4. Climate Migration Risk Index -->
+      <!-- 4. SNP Trait Explorer -->
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain" data-i18n="c8_domain">Digital health · Educational genomics</p>
+            <h3 data-i18n="c8_title">SNP Trait Explorer</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://snp-trait-explorer.streamlit.app/" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_demo">Live demo ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/snp-trait-explorer" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook" data-i18n="c8_hook">Turns raw SNP genotype files into plain-English, non-medical trait notes using public 1000 Genomes chr22 genotypes and curated GWAS Catalog associations, built for Geneva and Basel digital-health interviews.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
+            <ul>
+              <li data-i18n="c8_ch1">PostgreSQL + integer dosage (0/1/2) over string genotypes; 15 explainable non-medical chr22 SNPs instead of an opaque full-chromosome feature matrix.</li>
+              <li data-i18n="c8_ch2">Rule-based trait scores instead of ML trait models; Random Forest ancestry sketch with honest limits, fifteen markers are illustrative, not a consumer ancestry product.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4 data-i18n="h_impact">Impact</h4>
+            <ul>
+              <li data-i18n="c8_im1"><strong>15 curated large-N associations</strong> on chr22; committed demo ancestry classifier for Streamlit Cloud (no runtime training).</li>
+              <li data-i18n="c8_im2">Nine-language UI with a Behind the numbers methods page; educational disclaimers on every results view.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>PostgreSQL</span><span>scikit-learn</span><span>Streamlit</span><span>Plotly</span><span>1000 Genomes</span><span>GWAS Catalog</span><span>i18n</span>
+        </div>
+      </article>
+
+      <!-- 5. Climate Migration Risk Index -->
       <article class="case">
         <div class="case-head">
           <div>
@@ -263,7 +297,7 @@
         </div>
       </article>
 
-      <!-- 5. ESG Composite Scoring -->
+      <!-- 6. ESG Composite Scoring -->
       <article class="case">
         <div class="case-head">
           <div>
@@ -297,7 +331,7 @@
         </div>
       </article>
 
-      <!-- 6. CNC Machine Health -->
+      <!-- 7. CNC Machine Health -->
       <article class="case">
         <div class="case-head">
           <div>
@@ -331,7 +365,7 @@
         </div>
       </article>
 
-      <!-- 7. Wild Log -->
+      <!-- 8. Wild Log -->
       <article class="case">
         <div class="case-head">
           <div>
@@ -418,7 +452,7 @@
   </div>
 </footer>
 
-<script src="i18n.js?v=20260721b"></script>
-<script src="script.js?v=20260721b"></script>
+<script src="i18n.js?v=20260730a"></script>
+<script src="script.js?v=20260730a"></script>
 </body>
 </html>
