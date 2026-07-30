@@ -4,6 +4,7 @@ const FEATURED = new Set([
   "where-needs-overlap",
   "multilingual-rag-assistant",
   "icu-mortality-vital-shap",
+  "snp-trait-explorer",
   "climate-migration-risk-index",
   "esg-composite-scoring",
   "cnc-machine-health",
