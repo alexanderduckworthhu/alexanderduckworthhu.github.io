@@ -13,6 +13,16 @@ const FEATURED = new Set([
   "alexanderduckworthhu.github.io",
 ]);
 
+// Short blurbs when a GitHub repo has no description set.
+const REPO_DESCRIPTIONS = {
+  "01_next_docker": "Next.js app packaged with Docker for a simple containerized frontend demo.",
+  "02_express_docker": "Express API with Docker Compose and SQL init scripts for a containerized backend lab.",
+  "03_fullstack_docker": "Docker Compose full-stack demo wiring an API and frontend into one local stack.",
+  api01_cameras: "Node/Express cameras API with SQL schema and seed data, deployable on Vercel.",
+  clienttaskmanager: "Full-stack client task manager with auth, Docker Compose, and a React frontend.",
+  industrialecommerce: "Industrial machines ecommerce demo: Express, Postgres, static storefront, and Jenkins CI.",
+};
+
 const REPO_PAGE_SIZE = 6;
 const REPO_ROTATE_MS = 30000;
 
@@ -77,7 +87,10 @@ function buildRepoCard(repo) {
   title.textContent = repo.name;
 
   const desc = document.createElement("p");
-  desc.textContent = repo.description || "View on GitHub for details.";
+  desc.textContent =
+    repo.description ||
+    REPO_DESCRIPTIONS[repo.name] ||
+    "Small coursework or practice project. Open on GitHub for the code.";
 
   const meta = document.createElement("div");
   meta.className = "repo-meta";
