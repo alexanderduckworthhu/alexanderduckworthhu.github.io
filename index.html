@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260731c" />
+  <link rel="stylesheet" href="styles.css?v=20260731d" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>" />
 </head>
 <body>
@@ -174,25 +174,25 @@
             <a href="https://github.com/alexanderduckworthhu/multilingual-rag-assistant" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
           </div>
         </div>
-        <p class="case-hook" data-i18n="c2_hook">A document QA assistant over WHO topic guidance that indexes English and French in one vector space, answers with passage-level citations, and <em>refuses</em> when retrieval is weak.</p>
+        <p class="case-hook" data-i18n="c2_hook">A document QA assistant over WHO topic guidance that indexes English and French in one vector space, answers in English, French, German, Italian, Portuguese, Spanish, Arabic, Mandarin, or Russian with passage-level citations, and <em>refuses</em> when retrieval is weak.</p>
         <div class="case-grid">
           <div class="case-block">
             <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
             <ul>
-              <li data-i18n="c2_ch1">Chose <code>multilingual-e5-small</code> over OpenAI embeddings for a shared EN/FR space and fully offline demos; Chroma over Pinecone for zero cloud cost and inspectable indexes.</li>
-              <li data-i18n="c2_ch2">Trust stack: distance gate → closed-context prompt → chunk-ID citations → verifiable source passages in the UI. No "zero hallucination" claims, retrieval quality is the measured engineering claim.</li>
+              <li data-i18n="c2_ch1">Chose <code>multilingual-e5-small</code> over OpenAI embeddings so questions in nine languages can hit a shared EN/FR index offline; Chroma over Pinecone for zero cloud cost and inspectable indexes.</li>
+              <li data-i18n="c2_ch2">Trust stack: distance gate → closed-context prompt → answer drafted in the chosen UI language → chunk-ID citations → verifiable source passages. No "zero hallucination" claims, retrieval quality is the measured engineering claim.</li>
             </ul>
           </div>
           <div class="case-block">
             <h4 data-i18n="h_impact">Impact</h4>
             <ul>
               <li data-i18n="c2_im1"><strong>Precision@5 = 0.65 · MRR = 0.938</strong> on a golden-query eval set, reproducible with one command.</li>
-              <li data-i18n="c2_im2">Works without any API key via an extractive fallback path.</li>
+              <li data-i18n="c2_im2"><strong>Nine answer languages</strong> (EN/FR/DE/IT/PT/ES/AR/ZH/RU) with an extractive fallback that works without any API key.</li>
             </ul>
           </div>
         </div>
         <div class="tags">
-          <span>Python</span><span>ChromaDB</span><span>multilingual-e5</span><span>GPT-4o-mini</span><span>Streamlit</span><span>Retrieval eval</span>
+          <span>Python</span><span>ChromaDB</span><span>multilingual-e5</span><span>GPT-4o-mini</span><span>Streamlit</span><span>Retrieval eval</span><span>i18n</span>
         </div>
       </article>
 
@@ -462,7 +462,7 @@
   </div>
 </footer>
 
-<script src="i18n.js?v=20260731c"></script>
-<script src="script.js?v=20260731c"></script>
+<script src="i18n.js?v=20260731d"></script>
+<script src="script.js?v=20260731d"></script>
 </body>
 </html>
