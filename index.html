@@ -415,6 +415,39 @@
           <span>Flutter</span><span>Dart</span><span>Riverpod</span><span>Drift / SQLite</span><span>flutter_map</span><span>OpenStreetMap</span>
         </div>
       </article>
+
+      <article class="case">
+        <div class="case-head">
+          <div>
+            <p class="case-domain" data-i18n="c9_domain">Geospatial · Open energy data</p>
+            <h3>GeoSolar AI</h3>
+          </div>
+          <div class="case-links">
+            <a href="https://alexanderduckworthhu.github.io/geosolar-ai/" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_demo">Live demo ↗</a>
+            <a href="https://github.com/alexanderduckworthhu/geosolar-ai" target="_blank" rel="noopener" class="btn btn-small" data-i18n="btn_code">Code ↗</a>
+          </div>
+        </div>
+        <p class="case-hook" data-i18n="c9_hook">An interactive hex-cell and each-roof map of Swiss rooftop solar suitability from <strong>100,000 official Sonnendach.ch points</strong>, with an EN / DE / FR / IT interface and no live API dependency.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4 data-i18n="h_challenge">Challenge &amp; trade-offs</h4>
+            <ul>
+              <li data-i18n="c9_ch1">Stratified a national FileGDB of <strong>10,071,755 roofs</strong> into a portable 100k sample served as static JSON + Leaflet on GitHub Pages, so the explorer stays fast and offline-reproducible.</li>
+              <li data-i18n="c9_ch2">Maps official <code>KLASSE</code> suitability rather than kWh estimates: radiation already defines the class label, so showing kWh would leak the target the map is meant to explore.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4 data-i18n="h_impact">Impact</h4>
+            <ul>
+              <li data-i18n="c9_im1"><strong>Hex 2.4 km neighbourhood view</strong> and per-roof cadastre MultiPoints, with class-floor filters and mean-class / Class 4–5 colouring.</li>
+              <li data-i18n="c9_im2">Built from BFE / swisstopo / MeteoSwiss open data; city chips and bilingual-plus UI for Swiss audiences.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags">
+          <span>Python</span><span>Leaflet</span><span>GeoJSON</span><span>EPSG:2056</span><span>Sonnendach.ch</span><span>GitHub Pages</span><span>i18n</span>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -471,8 +504,8 @@
   </div>
 </footer>
 
-<script src="i18n-simple.js?v=20260731g"></script>
-<script src="i18n.js?v=20260731g"></script>
-<script src="script.js?v=20260731g"></script>
+<script src="i18n-simple.js?v=20261010a"></script>
+<script src="i18n.js?v=20261010a"></script>
+<script src="script.js?v=20261010a"></script>
 </body>
 </html>

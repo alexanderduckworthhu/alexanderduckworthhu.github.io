@@ -9,6 +9,7 @@ const FEATURED = new Set([
   "esg-composite-scoring",
   "cnc-machine-health",
   "wild_log",
+  "geosolar-ai",
   "Self_Supervised_Anomaly_Detection_for_Wildlife_Conservation_and_Biodiversity_Monitoring",
   "alexanderduckworthhu.github.io",
 ]);
